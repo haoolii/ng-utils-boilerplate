@@ -1,0 +1,44 @@
+<mat-toolbar color="primary" class="mat-elevation-z6 toolbar">
+  <button mat-icon-button (click)="sideNav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <button mat-button>
+    Components
+  </button>
+  <button mat-button>
+    CDK
+  </button>
+  <button mat-button>
+    Guides
+  </button>
+  <span class="example-spacer"></span>
+  <button mat-icon-button>
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-icon-button>
+    <mat-icon>share</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sideNav
+    class="example-sidenav"
+    [fixedInViewport]="true"
+    [fixedTopGap]="64"
+    [fixedBottomGap]="0"
+    [mode]="!(isHandset$ | async) ? 'side': 'over'"
+    [opened]="!(isHandset$ | async)"
+  >
+    <button mat-button class="example-button">
+      Components
+    </button>
+    <button mat-button class="example-button">
+      CDK
+    </button>
+    <button mat-button class="example-button">
+      Guides
+    </button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
