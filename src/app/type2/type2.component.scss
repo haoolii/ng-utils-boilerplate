@@ -1,0 +1,34 @@
+.example-icon {
+  padding: 0 14px;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.toolbar {
+  position: fixed;
+  z-index: 999;
+  overflow: hidden;
+  height: 64px;
+}
+
+.example-container {
+  position: absolute;
+  top: 64px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.example-sidenav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 260px;
+}
+
+.example-button {
+  width: 260px;
+  text-align: left;
+  padding: 10px 20px;
+}
