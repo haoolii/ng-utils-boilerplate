@@ -28,20 +28,29 @@
     [fixedBottomGap]="0"
     [mode]="!(isHandset$ | async) ? 'side': 'over'"
     [opened]="!(isHandset$ | async)"
+    [@onSideNavChange]="state ? 'open' : 'close'"
   >
-    <button mat-button class="example-button">
-      <mat-icon style="padding-right:5px;">flag</mat-icon>
-      <span>Components</span>
-    </button>
-    <button mat-button class="example-button">
-      <mat-icon style="padding-right:5px;">flag</mat-icon>
-      <span>CDK</span>
-    </button>
-    <button mat-button class="example-button">
-      <mat-icon style="padding-right:5px;">flag</mat-icon>
-      <span>Guides</span>
-    </button>
+  <div class="sidenav-container">
+    <mat-nav-list
+      class="nav-list">
+      <a mat-list-item *ngFor="let page of pages">
+        <mat-icon style="padding-right:5px;">{{page?.icon}}</mat-icon>
+        <span [@animateText]="state ? 'show' : 'hide'">{{ page?.name }} </span>
+      </a>
+    </mat-nav-list>
+    <span class="example-spacer"></span>
+    <div style="padding: 0px 10px; height: 48px;">
+      <button mat-icon-button (click)="toggle()">
+        <mat-icon *ngIf="state">arrow_left</mat-icon>
+        <mat-icon *ngIf="!state">arrow_right</mat-icon>
+      </button>
+    </div>
+  </div>
   </mat-sidenav>
-  <mat-sidenav-content>
+
+  <mat-sidenav-content
+    [@onMainContentChange]="state ? 'open' : 'close'"
+  >
+    <h1>Type2</h1>
   </mat-sidenav-content>
 </mat-sidenav-container>

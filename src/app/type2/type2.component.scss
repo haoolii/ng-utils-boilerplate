@@ -24,11 +24,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   width: 260px;
+  min-width: 60px;
+  height: 100%;
 }
 
 .example-button {
   width: 260px;
   text-align: left;
   padding: 10px 20px;
+}
+
+.nav-list {
+  overflow: hidden;
+}
+
+.sidenav-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  height: calc(100% - 64px);
 }
